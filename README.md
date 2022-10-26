@@ -46,7 +46,7 @@ On GitHub page Pull Requests -> new pull request -> change field to "base:main b
 10. ask for at least 1 reviewer to approve (your teammate)
 11. resolve any conflict in local by typing this in your console
 ```
-git pull --rebase
+git pull origin main --rebase
 ```
 Then in the source control on the leftside bar of VSCode, follow the prompt to accept incoming/current change
 add all change
