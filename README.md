@@ -1,3 +1,6 @@
+### Remote deployment link
+http://panda.eba-gaci4fx8.us-west-2.elasticbeanstalk.com/
+
 ### Getting Start(to read what already have
 1. build
 ```
