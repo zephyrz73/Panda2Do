@@ -2,6 +2,8 @@
 http://panda.eba-gaci4fx8.us-west-2.elasticbeanstalk.com/
 
 ### Getting Start(to read what already have
+
+(for linux please do docker-compose, for mac please do docker compose without "-")
 1. build
 ```
 $ docker-compose build
