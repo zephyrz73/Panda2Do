@@ -4,15 +4,15 @@ http://panda.eba-gaci4fx8.us-west-2.elasticbeanstalk.com/
 ### Getting Start(to read what already have
 1. build
 ```
-$ docker compose build
+$ docker-compose build
 ```
 2. drop and recreate and migrate db
 ```
-$ docker compose run web rake db:drop db:create db:migrate
+$ docker-compose run web rake db:drop db:create db:migrate
 ```
 3. start the server
 ```
-$ docker compose up
+$ docker-compose up
 ```
 4. put http://0.0.0.0:3000/ in browser, press RETERN
 
