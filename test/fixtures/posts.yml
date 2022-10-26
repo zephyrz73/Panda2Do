@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: MyText
+  user: one
+  tag: one
+  points2view: 1
+
+two:
+  title: MyString
+  body: MyText
+  user: two
+  tag: two
+  points2view: 1
