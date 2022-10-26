@@ -28,7 +28,7 @@ $ git branch
 ```
 3. go to your branch
 ```
-$ git checkout -b [username]/branchname
+$ git checkout [username]/[branchname]
 ```
 4. ***make edits to web content***
 5. git add your change
