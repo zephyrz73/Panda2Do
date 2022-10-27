@@ -12,6 +12,10 @@ $ docker-compose build
 ```
 $ docker-compose run web rake db:drop db:create db:migrate
 ```
+if you wish to use seed file, run
+```
+$ docker-compose run web rake db:drop db:create db:migrate db:seed
+```
 3. start the server
 ```
 $ docker-compose up
