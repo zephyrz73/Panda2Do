@@ -8,8 +8,14 @@
 
 <ul>
   <% @posts.each do |post| %>
+  <% if logged_in? and current_user.points >= post.points2view %>   
     <h2><%= link_to post.title, post%></h2>
     <b>Tag: </b><%= post.tag.name%><br>
-    <b>Posted by:</b> <%= post.user.name%> at <%= post.created_at%><br>
+    <b>Posted by:</b> <%= post.user.name%> at <%= post.created_at%><br> 
+  <% elsif post.points2view == 0 %>
+      <h2><%= link_to post.title, post%></h2>
+      <b>Tag: </b><%= post.tag.name%><br>
+      <b>Posted by:</b> <%= post.user.name%> at <%= post.created_at%><br> 
+  <% end%>
   <% end %>
 </ul>
