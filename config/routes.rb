@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "posts#index"
+  get 'tags/index'
+  root "tags#index"
 
   # get '/posts', to:'posts#show'
   # get "/posts/:id", to: "posts#post"

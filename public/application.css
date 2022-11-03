@@ -1,0 +1,36 @@
+#prompt {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  align-items: center;
+  background-image: url(./DarkCong.gif);
+}
+
+.prompt-text {
+  font-size: 10vh;
+  font-family: 'Merienda One', cursive;
+}
+
+#survive {
+  font-size: 13vh;
+  font-family: 'Merienda One', cursive;
+}
+
+#next-icon {
+  width: '100vw';
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 13vh;
+}
+
+#next-icon:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+#what2do {
+  font-size: 15vh;
+}
