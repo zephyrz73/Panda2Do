@@ -9,11 +9,6 @@ window.addEventListener("load", init);
 * CHANGE: Describe what your init function does here.
 */
 function init() {
-// THIS IS THE CODE THAT WILL BE EXECUTED ONCE THE WEBPAGE LOADS
-  // let startFade = setInterval(() => {})
-  // id('congr').style.display = "none";
-  // id('survive').style.display = "none";
-  // id('wondering').style.display = "none";
   let fade1 = new Promise((resolve, reject) => {
     unfade(id('congr'), resolve);
   });
@@ -39,17 +34,66 @@ function init() {
   }).then(() => {
     clearTimeout(congrTimer);
     clearTimeout(surviveTimer);
+    id('next-icon').addEventListener('click', nextButtonOnClick);
+    window.addEventListener('scroll', nextButtonOnClick);
   })
 
-  id('next-icon').addEventListener('click', nextButtonOnClick);
+
 }
 
 function nextButtonOnClick() {
+  let collapsePromise = new Promise((resolve, reject) => {
+    collapsePrompt();
+    resolve();
+  });
+  let timer = null;
+  collapsePromise.then(() => {
+    console.log("here");
+    return new Promise((resolve, reject) => {
+      timer = setTimeout(() => {titleAnimation(resolve)}, 1000);
+    });
+  }).then(() => {
+    clearTimeout(timer);
+  })
+}
+
+function titleAnimation(resolve) {
+  var textWrapper = document.querySelector('.ml1 .letters');
+  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+  anime.timeline({loop: false})
+    .add({
+      targets: '.ml1 .letter',
+      scale: [0.3,1],
+      opacity: [0,1],
+      translateZ: 0,
+      easing: "easeOutExpo",
+      duration: 600,
+      delay: (el, i) => 70 * (i+1)
+    }).add({
+      targets: '.ml1 .line',
+      scaleX: [0,1],
+      opacity: [0.5,1],
+      easing: "easeOutExpo",
+      duration: 700,
+      offset: '-=875',
+      delay: (el, i, l) => 80 * (l - i)
+    }).add({
+      targets: '#real-home-title',
+      translateY: -200
+    });
+    resolve();
+}
+
+function collapsePrompt(resolve) {
   let promptHeight = 100;
   var timer = setInterval(function() {
     if (promptHeight <= 0.1) {
-      id('prompt').display="none";
+      id('prompt').style.display="none";
       clearInterval(timer);
+      id('real-home').style.display = "flex";
+      window.removeEventListener('scroll');
+      resolve();
     }
     promptHeight -= 1;
     id('prompt').style.height = promptHeight + "vh";
