@@ -80,7 +80,7 @@ function titleAnimation(resolve) {
       delay: (el, i, l) => 80 * (l - i)
     }).add({
       targets: '#real-home-title',
-      translateY: -200
+      translateY: -150
     });
     resolve();
 }

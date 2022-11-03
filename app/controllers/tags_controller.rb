@@ -2,7 +2,8 @@ class TagsController < ApplicationController
   def index
     @tags = Tag.all
   end
-  def get
-    @tags = Tag.all
+  def show
+    @tag = Tag.find(params[:id])
+    @posts = Post.where(user: params[:id]).all
   end
 end
