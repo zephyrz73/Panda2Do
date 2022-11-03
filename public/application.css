@@ -37,15 +37,29 @@
   background-size: cover;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 #real-home-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+#tag-cards {
+  width: 100%;
+  display: flex;
+  padding: 5vh;
+}
+
+.card {
+  margin: 3vh;
+  width: 33%;
+}
+
 /* Website header*/
 .ml1 {
   font-weight: 900;
