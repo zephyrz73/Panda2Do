@@ -1,0 +1,17 @@
+<h1>New Tag</h1>
+
+<%= form_with url:"/tags", method: :post do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_field :description %><br>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

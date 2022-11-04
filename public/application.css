@@ -9,6 +9,17 @@
   background-image: url(./DarkCong.gif);
 }
 
+#welcome-msg-nav {
+  color: white;
+  margin-right: 30px;
+  margin-top: 5px;
+  font-size: 90%;
+}
+
+a .nav-link {
+  color: white;
+}
+
 .prompt-text {
   font-size: 10vh;
   color: white;
@@ -32,10 +43,10 @@
 }
 
 #real-home {
+  height: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,11 +64,12 @@
   width: 100%;
   display: flex;
   padding: 5vh;
+  flex-wrap: wrap;
 }
 
 .card {
   margin: 3vh;
-  width: 33%;
+  width: 20%;
 }
 
 /* Website header*/
