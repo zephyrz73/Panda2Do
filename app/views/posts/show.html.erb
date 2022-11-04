@@ -18,6 +18,9 @@
         <%= comment.body %>
       </p>
 
+      <% if logged_in? %>
+        
+
       <% if comment.user_id == current_user.id || @post.user_id == current_user.id%>
       <p>
           <%= link_to "Destroy Comment", [comment.post, comment], data: {
@@ -27,6 +30,7 @@
         </p>
       <% end %>
     <% end %>
+          <% end %>
 
 
     <% if logged_in? %>
