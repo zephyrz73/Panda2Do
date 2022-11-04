@@ -5,7 +5,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @posts = Post.where(user: params[:id]).all
+    @posts = Post.where(tag: params[:id]).all
   end
 
   def create

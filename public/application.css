@@ -67,6 +67,14 @@ a .nav-link {
   flex-wrap: wrap;
 }
 
+#create_post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
 .card {
   margin: 3vh;
   width: 20%;

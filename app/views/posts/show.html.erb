@@ -5,6 +5,10 @@
     <p >
       <strong><%= @post.body%></strong>
     </p>
+     <li><%= link_to "Destroy", post_path(@post), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
     <h3>Comments:</h3>
     <% @post.comments.each do |comment| %>
       <p>
@@ -17,4 +21,32 @@
         <strong>comment:</strong>
         <%= comment.body %>
       </p>
+
+      <% if logged_in? %>
+        
+
+      <% if comment.user_id == current_user.id || @post.user_id == current_user.id%>
+      <p>
+          <%= link_to "Destroy Comment", [comment.post, comment], data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                      } %>
+        </p>
+      <% end %>
     <% end %>
+          <% end %>
+
+
+    <% if logged_in? %>
+    <h2>Add a comment:</h2>
+      <%= form_with model: [ @post, @post.comments.build ] do |form| %>
+        <p>
+          <%= form.label :body %><br>
+          <%= form.text_area :body %>
+        </p>
+        <p>
+          <%= form.submit %>
+        </p>
+      <% end %>
+    <% end%>
+    
