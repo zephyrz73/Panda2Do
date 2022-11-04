@@ -1,0 +1,19 @@
+<div>
+  <h2><%= @tag.name %></h2>
+  <p><%= @tag.description %></p>
+</div>
+<div>
+  <% @posts.each do |post| %>
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= post.title %>
+          </h5>
+          <p class="card-text">
+            <%= post.body %>
+          </p>
+          <a href="/posts/<%=post.id%>" class="btn btn-primary">See the Comment</a>
+        </div>
+      </div>
+  <% end%>
+</div>
