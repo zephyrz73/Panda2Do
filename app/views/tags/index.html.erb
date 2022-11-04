@@ -39,3 +39,9 @@
     <% end %>
   </section>
 </section>
+
+<section id = "create_post">
+<% if logged_in?%>
+  <a href="/posts/new" class="btn btn-primary">Make new Post</a>
+<% end %> 
+</section>
