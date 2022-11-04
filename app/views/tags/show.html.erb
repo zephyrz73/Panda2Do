@@ -4,6 +4,7 @@
 </div>
 <div>
   <% @posts.each do |post| %>
+   <% if logged_in? and current_user.points >= post.points2view %> 
     <div class="card">
         <div class="card-body">
           <h5 class="card-title">
@@ -15,5 +16,18 @@
           <a href="/posts/<%=post.id%>" class="btn btn-primary">See Post Details</a>
         </div>
       </div>
+      <% elsif post.points2view == 0%>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= post.title %>
+          </h5>
+          <p class="card-text">
+            <%= post.body %>
+          </p>
+          <a href="/posts/<%=post.id%>" class="btn btn-primary">See Post Details</a>
+        </div>
+      </div>
+      <%end%>
   <% end%>
 </div>
