@@ -1,0 +1,39 @@
+<h1>Create New Post</h1>
+
+<%= form_with model: @post do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% @post.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %><br>
+    <% @post.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+   <div>
+    <%= form.label "points" %><br>
+    <%= form.text_field :points2view %><br>
+    <% @post.errors.full_messages_for(:points2view).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+  <p></p>
+  <%= form.label "Tag"%>
+  <%= form.collection_select(:tag_id, Tag.all, :id, :name) %>
+
+  </div>
+
+  <div>
+  <p></p>
+    <%= form.submit %>
+  </div>
+<% end %>
+
