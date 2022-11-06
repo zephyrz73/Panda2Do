@@ -9,10 +9,12 @@ Rails.application.routes.draw do
   # get '/posts', to:'posts#show'
   # get "/posts/:id", to: "posts#post"
 
-  get '/login', to: 'users#login_page'
-  post '/login', to: 'users#login'
-  get '/logout', to: 'users#delete'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#delete'
 
+  resources :users
+  
   resources :posts do
     resources :comments
   end
