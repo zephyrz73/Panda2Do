@@ -11,46 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet"> %>
     <%# <link rel="stylesheet" href="/application.css"> %>
     <!-- CSS only -->
-    <%# <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
     <%# <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> %>
     <%# <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> %>
   </head>
 
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container-fluid">
-        <img src="<%= asset_path("panda2do-logo.png") %>" style="width: 20px; height: 20px; margin-right: 5px;"/>
-        <a class="navbar-brand" href="#">What2Do</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarColor02">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/posts">Posts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/users">User Profile</a>
-            </li>
-          </ul>
-
-
-          <% if logged_in? %>
-          <h1 id="welcome-msg-nav">Welcome <%=current_user.name %> </h1>
-            <a href="/logout" class="btn btn-outline-light" type="submit">Logout</a>
-            <a href="/posts/new" class="btn btn-outline-light" type="submit">Create a new post</a>
-          <% else %>
-            <a href="/login" class="btn btn-outline-light" type="submit">Login</a>
-            <a href="/users/new" class="btn btn-outline-light" type="submit">Signup</a>
-          <% end %>
-        </div>
-      </div>
-    </nav>
     <%= yield %>
   </body>
 </html>

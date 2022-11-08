@@ -2,12 +2,15 @@
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import HelloMessage from './App';
-
-console.log('first')
+import App from './App';
 const container = document.getElementById('root');
 const root = createRoot(container);
+import { BrowserRouter } from "react-router-dom";
 
 document.addEventListener('DOMContentLoaded', () => {
-  root.render(<HelloMessage name="World" />);
+  root.render(
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>
+  );
 });
