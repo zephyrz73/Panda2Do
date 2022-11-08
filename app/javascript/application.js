@@ -1,6 +1,5 @@
-import "./components/homePrompt"
-// import "@hotwired/turbo-rails"
-// import "controllers"
+// import "./components/homePrompt"
+
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import HelloMessage from './App';

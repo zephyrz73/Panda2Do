@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'site/index'
+  root 'site#index'
   # root "tags#index"
   # resources :tags do
   #   resources :posts do
@@ -10,13 +10,13 @@ Rails.application.routes.draw do
   # get '/posts', to:'posts#show'
   # get "/posts/:id", to: "posts#post"
 
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  get '/logout', to: 'sessions#delete'
+  # get '/login', to: 'sessions#new'
+  # post '/login', to: 'sessions#create'
+  # get '/logout', to: 'sessions#delete'
 
-  resources :users
+  # resources :users
 
-  resources :posts do
-    resources :comments
-  end
+  # resources :posts do
+  #   resources :comments
+  # end
 end
